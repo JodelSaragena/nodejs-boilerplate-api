@@ -6,7 +6,7 @@ function model(sequelize) {
     const attributes = {
         token: {type: DataTypes.STRING },
         expires: {type: DataTypes.DATE},
-        created: { type: DataTypes.Date, allowNull: false, defaultValue:DataTypes.NOW},
+        created: { type: DataTypes.DATE, allowNull: false, defaultValue:DataTypes.NOW},
         createdByIp: {type: DataTypes.STRING },
         revoked: {type: DataTypes.DATE},
         replacedByIp: {type: DataTypes.STRING },
@@ -21,7 +21,7 @@ function model(sequelize) {
         }
     };
 
-    const option = {
+    const options = {
         //disable default timestamp fields (createdSAt and updateAt)
         timestamps: false
     };

@@ -13,7 +13,7 @@ router.post('/refresh-token', refreshToken);
 router.post('/revoke-token', authorize(), revokeTokenSchema, revokeToken);
 router.post('/register', registerSchema, register);
 router.post('/verify-email', verifyEmailSchema, verifyEmail); 
-router.post('/forgot-password', forgotpasswordSchema, forgotPassword); 
+router.post('/forgot-password', forgotPasswordSchema, forgotPassword); 
 router.post('/validate-reset-token', validateResetTokenSchema, validateResetToken);
 router.post('/reset-password', resetPasswordSchema, resetPassword);
 router.get('/', authorize (Role. Admin), getAll);
@@ -109,7 +109,15 @@ function verifyEmail(req, res, next) {
         .catch(next);
 }
 
+
 function forgotPasswordSchema(req, res, next) {
+    const schema = Joi.object({
+        email: Joi.string().email().required()
+    });
+    validateRequest(req, next, schema);
+}
+
+function forgotPassword(req, res, next) {
     accountService.forgotPassword (req.body, req.get('origin'))
         .then(() => res.json({ message: 'Please check your email for password reset instructions' })) 
         .catch(next);
