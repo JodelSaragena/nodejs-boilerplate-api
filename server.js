@@ -14,7 +14,6 @@ app.use(cookieParser());
 // CORS configuration
 app.use(cors({ origin: (origin, callback) => callback(null, true), credentials: true }));
 
-
 // API routes
 app.use('/accounts', require('./accounts/accounts.controller'));
 
