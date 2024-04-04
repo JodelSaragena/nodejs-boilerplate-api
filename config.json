@@ -6,14 +6,14 @@
         "password": "",
         "database": "node-mysql-signup-verification-api"        
         },        
-        "secret": "6uW9YXP9YkNxyCxwPT",        
+        "secret": "505e3d152caa4334a94cff99a0f1763a",        
         "emailFrom": "info@node-mysql-signup-verification-api.com",        
         "smtpOptions": {        
             "host": "smtp.ethereal.email",        
             "port": 587,        
             "auth": {        
-                "user": "sasha86@ethereal.email",       
-                "pass":"6uW9YXP9YkNxyCxwPT"
+                "user": "mae78@ethereal.email",       
+                "pass":"J7Bpp9eaxk8DfHqb7K"
         }
     }
 }
